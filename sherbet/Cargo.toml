@@ -1,5 +1,3 @@
-lib.path = "main.rs"
-
 [package]
 name = "sherbet"
 description = """
@@ -9,5 +7,9 @@ version = "0.0.0"
 
 license = "Apache-2.0"
 edition = "2021"
+
+[[bin]]
+name = "sherbet"
+path = "main.rs"
 
 [dependencies]
