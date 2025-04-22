@@ -1,0 +1,15 @@
+{
+	"configurations": [
+		{
+			"program": "${workspaceFolder}/target/riscv32i-unknown-none-elf/debug/sherbet",
+			"request": "launch",
+			"miDebuggerPath": "riscv32-unknown-linux-gnu-gdb",
+			"miDebuggerServerAddress": "localhost:1234",
+			"stopAtConnect": true,
+			"cwd": "${workspaceFolder}",
+			"MIMode": "gdb",
+			"name": "QEMU-DBG",
+			"type": "cppdbg"
+		}
+	]
+}
