@@ -1,1 +1,6 @@
-workspace = { members = ["sherbet"], resolver = "2" }
+[workspace]
+members = ["sherbet", "xdd-proto"]
+resolver = "2"
+
+[workspace.dependencies]
+xdd-proto = { path = "xdd-proto" }

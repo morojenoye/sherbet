@@ -1,16 +1,13 @@
+lib.path = "main.rs"
+
 [package]
-name = "sherbet"
+name = "xdd-proto"
 description = """
-sherbet
+xdd-proto
 """
 version = "0.0.0"
 
 license = "Apache-2.0"
 edition = "2021"
 
-[[bin]]
-name = "sherbet"
-path = "main.rs"
-
 [dependencies]
-xdd-proto = { workspace = true }
