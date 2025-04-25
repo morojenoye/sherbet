@@ -1,0 +1,21 @@
+[package]
+name = "qemu-rv32-virt"
+description = """
+qemu-rv32-virt
+"""
+version = "0.0.0"
+
+license = "Apache-2.0"
+edition = "2021"
+
+[[bin]]
+name = "qemu-rv32-virt"
+path = "main.rs"
+
+[dependencies]
+portable-atomic = { version = "1", features = ["unsafe-assume-single-core"] }
+spin = { workspace = true }
+uart_16550 = "0.3"
+
+xdd-proto = { workspace = true }
+sherbet = { workspace = true }

@@ -1,4 +1,3 @@
-#![no_main]
 #![no_std]
 use core::{
 	arch::{asm, global_asm},
@@ -14,21 +13,22 @@ global_asm!(
 );
 
 #[no_mangle]
-unsafe fn setup() {
+unsafe fn setup() -> ! {
 	asm!(
 		".option push",
 		".option norelax",
 		"la gp, __global_pointer$",
 		".option pop"
 	);
+	extern "Rust" {
+		fn main() -> !;
+	}
 	main();
+	#[allow(unreachable_code)]
+	loop {}
 }
 
 #[panic_handler]
 fn panic(_panic: &PanicInfo<'_>) -> ! {
-	loop {}
-}
-
-fn main() -> ! {
 	loop {}
 }

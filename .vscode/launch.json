@@ -1,7 +1,7 @@
 {
 	"configurations": [
 		{
-			"program": "${workspaceFolder}/target/riscv32i-unknown-none-elf/debug/sherbet",
+			"program": "${workspaceFolder}/target/riscv32i-unknown-none-elf/debug/qemu-rv32-virt",
 			"request": "launch",
 			"miDebuggerPath": "riscv32-unknown-linux-gnu-gdb",
 			"miDebuggerServerAddress": "localhost:1234",

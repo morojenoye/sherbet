@@ -1,6 +1,8 @@
 [workspace]
-members = ["sherbet", "xdd-proto"]
+members = ["cuppies/qemu-rv32-virt", "xdd-proto", "sherbet"]
 resolver = "2"
 
 [workspace.dependencies]
+spin = { version = "0.10", features = ["portable-atomic"] }
 xdd-proto = { path = "xdd-proto" }
+sherbet = { path = "sherbet" }
