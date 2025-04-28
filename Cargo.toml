@@ -1,5 +1,5 @@
 [workspace]
-members = ["cuppies/qemu-rv32-virt", "xdd-proto", "sherbet"]
+members = ["cuppies/ch32v003", "cuppies/qemu-rv32-virt", "xdd-proto", "sherbet"]
 resolver = "2"
 
 [workspace.dependencies]

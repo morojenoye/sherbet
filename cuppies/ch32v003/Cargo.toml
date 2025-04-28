@@ -1,0 +1,20 @@
+[package]
+name = "ch32v003"
+description = """
+ch32v003
+"""
+version = "0.0.0"
+
+license = "Apache-2.0"
+edition = "2021"
+
+[[bin]]
+name = "ch32v003"
+path = "main.rs"
+
+[dependencies]
+portable-atomic = { version = "1", features = ["unsafe-assume-single-core"] }
+spin = { workspace = true }
+
+xdd-proto = { workspace = true }
+sherbet = { workspace = true }
