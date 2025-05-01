@@ -1,17 +1,14 @@
+lib.path = "main.rs"
+
 [package]
-name = "ch32v003"
+name = "qingkev2a"
 description = """
-ch32v003
+qingkev2a
 """
 version = "0.0.0"
 
 license = "Apache-2.0"
 edition = "2021"
 
-[[bin]]
-name = "ch32v003"
-path = "main.rs"
-
 [dependencies]
-qingkev2a = { workspace = true }
 sherbet = { workspace = true }

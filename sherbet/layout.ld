@@ -6,23 +6,32 @@ ENTRY( start )
 SECTIONS
 {
 	.text : {
-		* ( .text.start )
+		/* must be single jump instruction */
+		KEEP ( * ( .text.start ))
+
+		/* needed in case jump instruction is compressed */
+		. = ALIGN( 4 );
+
+		ASSERT (( . == ORIGIN(FLASH) + 4 ),
+			"start must be single jump instruction" )
+
+		/* correct absolute address required */
+		KEEP ( * ( .text.interrupt ))
+
 		* ( .rodata .rodata.* )
 		* ( .text .text.* )
-		. = ALIGN( 8 );
-		* ( .text.interrupt )
-	} > FLASH
+	} >FLASH
 
 	.data _stack_0 : {
 		PROVIDE( __global_pointer$ = . + 128 );
 		* ( .sdata .sdata.* )
 		* ( .data .data.* )
-	} > RAM
+	} >RAM AT >FLASH
 
 	.wipe ( NOLOAD ) : {
 		_wipe_0 = .;
 		* ( .sbss .sbss.* )
 		* ( .bss .bss.* )
 		_wipe_1 = .;
-	} > RAM
+	} >RAM
 }

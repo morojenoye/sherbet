@@ -4,16 +4,24 @@ use core::{
 	panic::PanicInfo,
 };
 
-global_asm!(
+pub mod clock;
+pub mod interface;
+
+global_asm! {
 	".section .text.start",
-	".globl start",
-	"start:",
-	"la sp, _stack_0",
 	"j setup",
-);
+}
+
+global_asm! {
+	".section .text.setup",
+	".globl setup",
+	"setup:",
+	"la sp, _stack_0",
+	"j sherbet",
+}
 
 #[no_mangle]
-unsafe fn setup() -> ! {
+unsafe extern "C" fn sherbet() -> ! {
 	asm!(
 		".option push",
 		".option norelax",
@@ -21,10 +29,9 @@ unsafe fn setup() -> ! {
 		".option pop"
 	);
 	extern "Rust" {
-		fn main() -> !;
+		fn sherbet_user_provided_entry();
 	}
-	main();
-	#[allow(unreachable_code)]
+	sherbet_user_provided_entry();
 	loop {}
 }
 

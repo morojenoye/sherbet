@@ -13,9 +13,4 @@ name = "qemu-rv32-virt"
 path = "main.rs"
 
 [dependencies]
-portable-atomic = { version = "1", features = ["unsafe-assume-single-core"] }
-spin = { workspace = true }
-uart_16550 = "0.3"
-
-xdd-proto = { workspace = true }
 sherbet = { workspace = true }

@@ -1,8 +1,14 @@
 [workspace]
-members = ["cuppies/ch32v003", "cuppies/qemu-rv32-virt", "xdd-proto", "sherbet"]
+members = [
+    "cuppies/ch32v003",
+    "cpu/qingkev2a",
+    "cuppies/qemu-rv32-virt",
+    "xdd-proto",
+    "sherbet",
+]
 resolver = "2"
 
 [workspace.dependencies]
-spin = { version = "0.10", features = ["portable-atomic"] }
+qingkev2a = { path = "cpu/qingkev2a" }
 xdd-proto = { path = "xdd-proto" }
 sherbet = { path = "sherbet" }

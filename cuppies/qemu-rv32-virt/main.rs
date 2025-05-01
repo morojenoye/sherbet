@@ -3,6 +3,6 @@
 extern crate sherbet;
 
 #[no_mangle]
-extern "Rust" fn main() -> ! {
+extern "Rust" fn sherbet_user_provided_entry() {
 	loop {}
 }
