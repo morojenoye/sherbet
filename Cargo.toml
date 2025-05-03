@@ -8,6 +8,9 @@ members = [
 ]
 resolver = "2"
 
+[profile.dev]
+opt-level = "z"
+
 [workspace.dependencies]
 qingkev2a = { path = "cpu/qingkev2a" }
 xdd-proto = { path = "xdd-proto" }

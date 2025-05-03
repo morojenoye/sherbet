@@ -1,5 +1,5 @@
-_stack_0 = ALIGN( ORIGIN ( RAM ) + _HART_STACK_SIZE * _HART_COUNT, 8 );
-_stack_1 = ORIGIN ( RAM );
+_stack_hi = ALIGN( ORIGIN ( RAM ) + _HART_STACK_SIZE * _HART_COUNT, 8 );
+_stack_va = ORIGIN ( RAM );
 
 ENTRY( start )
 
@@ -22,16 +22,21 @@ SECTIONS
 		* ( .text .text.* )
 	} >FLASH
 
-	.data _stack_0 : {
-		PROVIDE( __global_pointer$ = . + 128 );
+	.data _stack_hi : {
+		/* addr in flash and in ram */
+		_data_la = LOADADDR ( .data );
+		_data_va = .;
+
+		__global_pointer$ = . + 128;
 		* ( .sdata .sdata.* )
 		* ( .data .data.* )
+		_data_hi = .;
 	} >RAM AT >FLASH
 
 	.wipe ( NOLOAD ) : {
-		_wipe_0 = .;
+		_wipe_va = .;
 		* ( .sbss .sbss.* )
 		* ( .bss .bss.* )
-		_wipe_1 = .;
+		_wipe_hi = .;
 	} >RAM
 }
