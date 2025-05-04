@@ -1,0 +1,14 @@
+lib.path = "main.rs"
+
+[package]
+name = "rv32i"
+description = """
+rv32i
+"""
+version = "0.0.0"
+
+license = "Apache-2.0"
+edition = "2021"
+
+[dependencies]
+sherbet = { workspace = true }

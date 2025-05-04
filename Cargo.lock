@@ -25,6 +25,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "rv32i"
+version = "0.0.0"
+dependencies = [
+ "sherbet",
+]
+
+[[package]]
 name = "sherbet"
 version = "0.0.0"
 dependencies = [

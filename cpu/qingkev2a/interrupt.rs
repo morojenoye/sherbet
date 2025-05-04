@@ -45,7 +45,7 @@ pub unsafe fn setup() {
 		// of the interrupt handling function at the vector table,
 		// also set mtvec[0]=1 so that processor use vector table.
 		//
-		"la t0, _EXCEPTION_AND_INTERRUPT_VECTOR_TABLE_BASE_ADDR",
+		"la t0, _TRAP_VECTOR_BASE_ADDR",
 		"addi t0, t0, 3",
 		"csrw mtvec, t0",
 	)

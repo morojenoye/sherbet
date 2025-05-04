@@ -5,19 +5,29 @@ ENTRY( start )
 
 SECTIONS
 {
-	.text : {
+	.text.start : {
 		/* must be single jump instruction */
 		KEEP ( * ( .text.start ))
 
 		/* needed in case jump instruction is compressed */
 		. = ALIGN( 4 );
 
-		ASSERT (( . == ORIGIN(FLASH) + 4 ),
-			"start must be single jump instruction" )
+		ASSERT (( . == ORIGIN ( FLASH ) + 4 ),
+		"start must be single jump instruction" )
+	} >FLASH
+
+	.text.interrupt : {
+		ASSERT (( . == ORIGIN ( FLASH ) + 4 ),
+		"unable to link interrupt handlers" )
+
+		. = DEFINED( _TRAP_VECTOR_BASE_USED ) ?
+		ALIGN( 256 ) : ALIGN( 4 );
 
 		/* correct absolute address required */
 		KEEP ( * ( .text.interrupt ))
+	} >FLASH
 
+	.text : {
 		* ( .rodata .rodata.* )
 		* ( .text .text.* )
 	} >FLASH

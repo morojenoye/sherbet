@@ -9,6 +9,8 @@ pub mod interface;
 
 global_asm! {
 	".section .text.start",
+	".globl start",
+	"start:",
 	"j setup",
 }
 

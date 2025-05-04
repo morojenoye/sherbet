@@ -3,6 +3,7 @@ members = [
     "cuppies/ch32v003",
     "cpu/qingkev2a",
     "cuppies/qemu-rv32-virt",
+    "cpu/rv32i",
     "xdd-proto",
     "sherbet",
 ]
