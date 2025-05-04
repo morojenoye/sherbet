@@ -1,9 +1,9 @@
 lib.path = "main.rs"
 
 [package]
-name = "xdd-proto"
+name = "rv32"
 description = """
-xdd-proto
+rv32
 """
 version = "0.0.0"
 
@@ -11,3 +11,4 @@ license = "Apache-2.0"
 edition = "2021"
 
 [dependencies]
+sherbet = { workspace = true }

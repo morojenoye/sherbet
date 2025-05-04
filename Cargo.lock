@@ -6,7 +6,7 @@ version = 4
 name = "ch32v003"
 version = "0.0.0"
 dependencies = [
- "qingkev2a",
+ "qingke-v2a",
  "sherbet",
 ]
 
@@ -18,14 +18,14 @@ dependencies = [
 ]
 
 [[package]]
-name = "qingkev2a"
+name = "qingke-v2a"
 version = "0.0.0"
 dependencies = [
  "sherbet",
 ]
 
 [[package]]
-name = "rv32i"
+name = "rv32"
 version = "0.0.0"
 dependencies = [
  "sherbet",
@@ -33,11 +33,4 @@ dependencies = [
 
 [[package]]
 name = "sherbet"
-version = "0.0.0"
-dependencies = [
- "xdd-proto",
-]
-
-[[package]]
-name = "xdd-proto"
 version = "0.0.0"

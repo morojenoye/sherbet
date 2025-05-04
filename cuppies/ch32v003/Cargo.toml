@@ -13,5 +13,5 @@ name = "ch32v003"
 path = "main.rs"
 
 [dependencies]
-qingkev2a = { workspace = true }
+qingke-v2a = { workspace = true }
 sherbet = { workspace = true }

@@ -1,9 +1,9 @@
 lib.path = "main.rs"
 
 [package]
-name = "qingkev2a"
+name = "qingke-v2a"
 description = """
-qingkev2a
+qingke-v2a
 """
 version = "0.0.0"
 
