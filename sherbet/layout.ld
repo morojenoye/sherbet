@@ -20,9 +20,6 @@ SECTIONS
 		ASSERT (( . == ORIGIN ( FLASH ) + 4 ),
 		"unable to link interrupt handlers" )
 
-		. = DEFINED( _TRAP_VECTOR_BASE_USED ) ?
-		ALIGN( 256 ) : ALIGN( 4 );
-
 		/* correct absolute address required */
 		KEEP ( * ( .text.interrupt ))
 	} >FLASH
