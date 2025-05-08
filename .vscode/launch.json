@@ -1,7 +1,7 @@
 {
 	"configurations": [
 		{
-			"program": "${workspaceFolder}/target/riscv32e-unknown-none-elf/debug/qemu-rv32-virt",
+			"program": "${workspaceFolder}/_obj_/riscv32e-unknown-none-elf/debug/qemu-rv32-virt",
 			"request": "launch",
 			"miDebuggerPath": "riscv32-unknown-linux-gnu-gdb",
 			"miDebuggerServerAddress": "localhost:1234",
@@ -12,7 +12,7 @@
 			"type": "cppdbg"
 		},
 		{
-			"program": "${workspaceFolder}/target/riscv32e-unknown-none-elf/debug/ch32v003",
+			"program": "${workspaceFolder}/_obj_/riscv32e-unknown-none-elf/debug/ch32v003",
 			"request": "launch",
 			"miDebuggerPath": "riscv32-unknown-linux-gnu-gdb",
 			"miDebuggerServerAddress": "192.168.1.100:1442",

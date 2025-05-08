@@ -13,4 +13,5 @@ opt-level = "z"
 
 [workspace.dependencies]
 qingke-v2a = { path = "topping/qingke-v2a" }
+rv32 = { path = "topping/rv32" }
 sherbet = { path = "sherbet" }

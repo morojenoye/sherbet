@@ -1,1 +1,1 @@
-pub fn sherbet_clock_tick() {}
+pub fn tick() {}

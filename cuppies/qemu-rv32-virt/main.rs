@@ -2,7 +2,13 @@
 #![no_std]
 extern crate sherbet;
 
+use rv32::interrupt;
+
 #[no_mangle]
 extern "Rust" fn sherbet_user_provided_entry() {
+	unsafe {
+		interrupt::setup();
+		sherbet::reloc();
+	}
 	loop {}
 }

@@ -14,6 +14,7 @@ dependencies = [
 name = "qemu-rv32-virt"
 version = "0.0.0"
 dependencies = [
+ "rv32",
  "sherbet",
 ]
 

@@ -7,20 +7,20 @@ use core::{
 pub mod clock;
 pub mod interface;
 
-global_asm! {
+global_asm!(
 	".section .text.start",
-	".globl start",
+	".globl start", //
 	"start:",
 	"j setup",
-}
+);
 
-global_asm! {
+global_asm!(
 	".section .text.setup",
 	".globl setup",
 	"setup:",
 	"la sp, _stack_hi",
 	"j sherbet",
-}
+);
 
 #[no_mangle]
 unsafe extern "C" fn sherbet() -> ! {
@@ -28,7 +28,7 @@ unsafe extern "C" fn sherbet() -> ! {
 		".option push",
 		".option norelax",
 		"la gp, __global_pointer$",
-		".option pop"
+		".option pop",
 	);
 	extern "Rust" {
 		fn sherbet_user_provided_entry();

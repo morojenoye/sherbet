@@ -1,5 +1,5 @@
 unsafe extern "C" fn clock_tick_interrupt() {
-	sherbet::clock::sherbet_clock_tick();
+	sherbet::clock::tick();
 }
 
 unsafe extern "C" fn required_interrupt() {
