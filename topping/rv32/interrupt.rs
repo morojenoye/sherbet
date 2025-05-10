@@ -24,5 +24,6 @@ pub unsafe fn setup() {
 		"la t0, _TRAP_VECTOR_BASE_ADDR",
 		"addi t0, t0, 1",
 		"csrw mtvec, t0",
+		out("t0") _,
 	)
 }

@@ -17,11 +17,8 @@ pub unsafe fn setup() {
 	let val: u32 = 0b1 << 7 | 0b11 << 3 | 0b101;
 	core::arch::asm!(
 		"csrw 0x3A0, {val}",
+		"fence.i",
 		val = in(reg) val,
 		options(nostack, nomem)
-	);
-	core::arch::asm!(
-		"csrrsi zero, 0x747, 1",
-		"fence.i", //
 	);
 }
