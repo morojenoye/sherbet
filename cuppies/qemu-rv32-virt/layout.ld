@@ -7,6 +7,9 @@ MEMORY
 _HART_STACK_SIZE = 512;
 _HART_COUNT = 1;
 
+_FLASH_BASE_ADDR = ORIGIN ( FLASH );
+_FLASH_LEN = LENGTH ( FLASH );
+
 _TRAP_VECTOR_BASE_ADDR = ADDR ( .text.interrupt );
 
 INCLUDE sherbet/layout.ld

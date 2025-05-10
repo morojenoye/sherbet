@@ -4,6 +4,6 @@ target = "riscv32e-unknown-none-elf"
 [target.riscv32e-unknown-none-elf]
 rustflags = ["-C", "link-arg=-Tcuppies/qemu-rv32-virt/layout.ld"]
 runner = """
-qemu-system-riscv32 -s -S -m 146K -cpu rv32 \
+qemu-system-riscv32 -s -S -m 146K -cpu rv32,smepmp=on \
 -machine virt -nographic -bios
 """
