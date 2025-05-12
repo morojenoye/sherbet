@@ -6,7 +6,7 @@ extern crate sherbet;
 use rv32::{interrupt, pmp};
 
 #[no_mangle]
-extern "C" fn sherbet_user_provided_entry() {
+extern "C" fn sherbet_user_provided_entry() -> ! {
 	unsafe {
 		interrupt::setup();
 		pmp::setup();
