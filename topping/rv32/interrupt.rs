@@ -7,7 +7,7 @@ unsafe extern "C" fn required_interrupt() {
 
 global_asm!(
 	".section .text.interrupt",
-	".globl __EXCEPTION_AND_INTERRUPT_VECTOR_TABLE",
+	".weak __EXCEPTION_AND_INTERRUPT_VECTOR_TABLE",
 	".option push",
 	".option norelax",
 	".option norvc",

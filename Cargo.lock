@@ -7,6 +7,7 @@ name = "ch32v003"
 version = "0.0.0"
 dependencies = [
  "qingke-v2a",
+ "rv32",
  "sherbet",
 ]
 
